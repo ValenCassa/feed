@@ -26,6 +26,23 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Feed • Valentin Cassarino</title>
+	<meta property="og:title" content={'Feed • Valentin Cassarino'} />
+	<meta property="twitter:title" content={'Feed • Valentin Cassarino'} />
+
+	<meta property="description" content={'Welcome to feed!'} />
+	<meta property="og:description" content={'Welcome to feed!'} />
+	<meta name="twitter:description" content={'Welcome to feed!'} />
+
+	<meta property="og:image" content={'https://i.imgur.com/joO1Icy.png'} />
+	<meta name="twitter:image" content={'https://i.imgur.com/joO1Icy.png'} />
+	<meta name="image" content={'https://i.imgur.com/joO1Icy.png'} />
+
+	<meta property="og:type" content="article" />
+	<meta name="twitter:card" content="summary_large_image" />
+</svelte:head>
+
 {#key refresh}
 	<div
 		class="max-w-xl m-auto sm:pt-[4em] sm:min-h-screen relative flex"

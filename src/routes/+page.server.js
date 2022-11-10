@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { getViews } from '../services/views';
+import { API_URL } from '../utils/apiUtils';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
 	try {
-		const data = await axios.get('http://localhost:5173/api/posts');
+		const data = await axios.get(`${API_URL}/api/posts`);
 		const views = await getViews();
 
 		return {

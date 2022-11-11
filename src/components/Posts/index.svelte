@@ -3,7 +3,7 @@
 	import Container from '$components/Container/index.svelte';
 	import { getFormattedDate } from '../../utils/getFormattedDate';
 	import Markdown from '$components/Markdown/Markdown.svelte';
-	import { authenticated } from '../../stores/sessionStore';
+	import { page } from '$app/stores';
 	import Trash from '../../icons/Trash.svelte';
 	import { deletePost } from '../../services/posts';
 
@@ -32,7 +32,7 @@
 						<p class="font-bold text-md">
 							Valen <span class="font-normal text-darkGray text-sm">@devCassa</span>
 						</p>
-						{#if $authenticated}
+						{#if $page.data.authenticated}
 							<button
 								class="text-red-400 hover:brightness-[80%] cursor-pointer"
 								on:click={() => onDelete(post._id)}

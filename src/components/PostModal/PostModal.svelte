@@ -3,7 +3,7 @@
 	import { modalStore } from '../../stores/postModal';
 	import { fade } from 'svelte/transition';
 	import { createPost } from '../../services/posts';
-	import { authenticated } from '../../stores/sessionStore';
+	import { page } from '$app/stores';
 	import { dataStore } from '../../stores/dataStore';
 
 	const openModal = () => {
@@ -33,7 +33,7 @@
 	$: modal = $modalStore;
 </script>
 
-{#if $authenticated}
+{#if $page.data.authenticated}
 	<Portal target="body">
 		{#if modal}
 			<div

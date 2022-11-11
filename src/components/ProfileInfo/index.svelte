@@ -3,7 +3,7 @@
 	import Location from '../../icons/Location.svelte';
 	import Views from '../../icons/Views.svelte';
 	import Container from '$components/Container/index.svelte';
-	import { dataStore } from '../../stores/dataStore';
+	import { page } from '$app/stores';
 </script>
 
 <div
@@ -39,6 +39,6 @@
 		<span class="grid place-content-center">
 			<Views />
 		</span>
-		<p class="grid place-content-center">{$dataStore.views}</p>
+		<p class="grid place-content-center">{$page.data.views}</p>
 	</div>
 </div>

@@ -3,26 +3,11 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import PostModal from '../components/PostModal/PostModal.svelte';
-	import { getSession } from '../services/session';
-	import { authenticated } from '../stores/sessionStore';
 	export let path = '';
 	let refresh;
 
 	onMount(() => {
 		refresh = path;
-		getSession()
-			.then((data) => {
-				const { status } = data;
-
-				if (status === 'Authorized') {
-					authenticated.set(true);
-				} else {
-					authenticated.set(false);
-				}
-			})
-			.catch((err) => {
-				authenticated.set(false);
-			});
 	});
 </script>
 
